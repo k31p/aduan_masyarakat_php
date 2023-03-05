@@ -2,3 +2,5 @@
 *.txt
 
 /mentahan*
+/uploads_yobel/*
+!/uploads_yobel/.gitkeep

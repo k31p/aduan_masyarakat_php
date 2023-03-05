@@ -15,19 +15,4 @@
     <link rel="stylesheet" href="<?= base_url_yobel('/assets_yobel/select2/css/select2-bootstrap-5-theme.min.css') ?>">
 </head>
 <body>
-    <?php if(isset($_SESSION['berhasil_yobel'])): ?>
-        <div class="row justify-content-center m-0">
-            <div class="col">
-                <div class="alert alert-success"><?= $_SESSION['berhasil_yobel'] ?></div>
-            </div>
-        </div>
-    <?php unset($_SESSION['berhasil_yobel']); endif; ?>
-
-    <?php if(isset($_SESSION['gagal_yobel'])): ?>
-        <div class="row justify-content-center m-0">
-            <div class="col">
-                <div class="alert alert-danger"><?= $_SESSION['gagal_yobel'] ?></div>
-            </div>
-        </div>
-    <?php unset($_SESSION['gagal_yobel']); endif; ?>
    

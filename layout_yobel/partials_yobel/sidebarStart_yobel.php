@@ -1,8 +1,13 @@
 <style>
-    /* div#wrapper{
-        background-image: url('<?= base_url_yobel('/assets_yobel/image/1045.jpg') ?>');
+    div#wrapper{
+        background-image: url('<?= base_url_yobel('/assets_yobel/image/bg.png') ?>');
         background-size: cover;
-    } */
+    }
+
+    .shadowing-yobel{
+        background: rgba(254, 254, 254, 0.85);
+        box-shadow: none;
+    }
 </style>
 
 <div class="d-flex" id="wrapper">
@@ -11,16 +16,16 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/home_yobel.php') ?>"><i class="fa fa-home"></i> Dashboard</a>
 
-            <?php if($_SESSION['role_user_yobel'] == 'admin'): ?>
+            <?php if ($_SESSION['role_user_yobel'] == 'admin') : ?>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/petugas_yobel.php') ?>"><i class="fa fa-user-gear"></i> Petugas</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/masyarakat_yobel.php') ?>"><i class="fa fa-user"></i> Masyarakat</a>
                 <!-- <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/laporan_yobel.php') ?>" target="_blank">Buat Laporan</a> -->
             <?php endif; ?>
-            <?php if(check_valid_role_yobel(['admin', 'petugas'])): ?>
+            <?php if (check_valid_role_yobel(['admin', 'petugas'])) : ?>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/list_keluhan_yobel.php') ?>"><i class="fa fa-file-lines"></i> Aduan/Keluhan</a>
             <?php endif; ?>
 
-            <?php if($_SESSION['role_user_yobel'] == 'masyarakat'): ?>
+            <?php if ($_SESSION['role_user_yobel'] == 'masyarakat') : ?>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/keluhan_kamu_yobel.php') ?>">Aduan Kamu</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/buat_aduan_yobel.php') ?>">Buat Aduan</a>
             <?php endif; ?>
@@ -51,3 +56,23 @@
                 </div> -->
             </div>
         </nav>
+        <div class="shadowing-yobel pt-2 pb-4 shadow">
+        <div class="container-fluid">
+            <?php if (isset($_SESSION['berhasil_yobel'])) : ?>
+                <div class="row justify-content-center m-0">
+                    <div class="col">
+                        <div class="alert alert-success"><?= $_SESSION['berhasil_yobel'] ?></div>
+                    </div>
+                </div>
+            <?php unset($_SESSION['berhasil_yobel']);
+            endif; ?>
+
+            <?php if (isset($_SESSION['gagal_yobel'])) : ?>
+                <div class="row justify-content-center m-0">
+                    <div class="col">
+                        <div class="alert alert-danger"><?= $_SESSION['gagal_yobel'] ?></div>
+                    </div>
+                </div>
+            <?php unset($_SESSION['gagal_yobel']);
+            endif; ?>
+        </div>

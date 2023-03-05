@@ -165,11 +165,11 @@ $qListMasyarakatYobel = query_yobel("SELECT * FROM masyarakat_yobel");
             margin: 2,
             filename: 'laporan_aduan_masyarakat_yobel.pdf',
             image: {
-                type: 'png',
+                type: 'jpg',
                 quality: 1
             },
             html2canvas: {
-                scale: 3
+                scale: 2
             },
             jspdf: {
                 unit: 'cm',
