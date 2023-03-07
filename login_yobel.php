@@ -1,6 +1,12 @@
 <?php require_once 'autoloader_yobel.php'; ?>
 
 <?php
+
+if(isset($_SESSION['id_user_yobel'])){
+  header('Location: dashboard_yobel/home_yobel.php');
+  return;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username_yobel = $_POST['username_yobel'];
   $password_yobel = md5($_POST['password_yobel']);

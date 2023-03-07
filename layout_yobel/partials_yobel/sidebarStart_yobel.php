@@ -30,6 +30,9 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/buat_aduan_yobel.php') ?>">Buat Aduan</a>
             <?php endif; ?>
 
+            <?php if ($_SESSION['role_user_yobel'] == 'admin') : ?>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/log_yobel.php') ?>"><i class="fa fa-gear"></i> Log</a>
+            <?php endif; ?>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url_yobel('/dashboard_yobel/misc_yobel/logout_yobel.php') ?>"><i class="fa fa-right-from-bracket"></i> Logout</a>
         </div>
     </div>
